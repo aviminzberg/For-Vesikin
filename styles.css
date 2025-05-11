@@ -1,31 +1,32 @@
 @font-face {
-  font-family: 'Ezra SIL SR';
-  src: url('fonts/SILEOTSR.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-body{font-family:'Varela Round',sans-serif;margin:0;padding:20px;background:#f5f5f5;color:#333}
-#clock{font-size:2.5em;text-align:center;margin:20px 0}
-#hebrewDate{text-align:center;font-size:1.2em;margin-bottom:20px}
-#currentZmanLabel{text-align:center;font-size:1.5em;margin:10px 0;color:#2c3e50}
-#currentZmanTime{text-align:center;font-size:2em;margin:10px 0;color:#e74c3c}
-#countdown{text-align:center;font-size:1.8em;margin:10px 0;color:#27ae60}
-#zmanList{max-width:600px;margin:20px auto}
-#zmanList>div{display:flex;justify-content:space-between;padding:10px;margin:5px 0;background:white;border-radius:8px;box-shadow:0 2px 4px rgba(0,0,0,0.1)}
-#zmanList>div.next{background:#e8f5e9;border:2px solid #27ae60}
-#settingsBtn{position:fixed;top:20px;right:20px;background:none;border:none;font-size:1.5em;cursor:pointer}
-#settingsModal{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);align-items:center;justify-content:center;z-index:200}
-#settingsModal>div{background:#fff;color:#222;border-radius:1rem;padding:2rem;max-width:400px;width:90vw;max-height:90vh;overflow-y:auto}
-fieldset{border:1px solid #ccc;border-radius:8px;padding:15px;margin:15px 0}
-legend{font-weight:bold;padding:0 10px}
-input[type="number"]{width:3em;padding:5px;border:1px solid #ccc;border-radius:4px}
-button{padding:8px 16px;border:none;border-radius:4px;background:#3498db;color:white;cursor:pointer}
-
-[lang|="he"], [dir="rtl"] {
-  font-family: 'Ezra SIL SR', 'Varela Round', sans-serif !important;
-}
-
-#zmanList, #zmanList * {
-  font-family: 'Ezra SIL SR', 'Varela Round', sans-serif !important;
-}
+    font-family: 'Ezra SIL SR';
+    src: url('fonts/SILEOTSR.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  body{font-family:'Varela Round',sans-serif;margin:0;padding:20px;background:#f5f5f5;color:#333}
+  #clock{font-size:2.5em;text-align:center;margin:20px 0}
+  #hebrewDate{text-align:center;font-size:1.2em;margin-bottom:20px}
+  #currentZmanLabel{text-align:center;font-size:1.5em;margin:10px 0;color:#2c3e50}
+  #currentZmanTime{text-align:center;font-size:2em;margin:10px 0;color:#e74c3c}
+  #countdown{text-align:center;font-size:1.8em;margin:10px 0;color:#27ae60}
+  #zmanList{max-width:600px;margin:20px auto}
+  #zmanList>div{display:flex;justify-content:space-between;padding:10px;margin:5px 0;background:white;border-radius:8px;box-shadow:0 2px 4px rgba(0,0,0,0.1)}
+  #zmanList>div.next{background:#e8f5e9;border:2px solid #27ae60}
+  #settingsBtn{position:fixed;top:20px;right:20px;background:none;border:none;font-size:1.5em;cursor:pointer}
+  #settingsModal{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);align-items:center;justify-content:center;z-index:200}
+  #settingsModal>div{background:#fff;color:#222;border-radius:1rem;padding:2rem;max-width:400px;width:90vw;max-height:90vh;overflow-y:auto}
+  fieldset{border:1px solid #ccc;border-radius:8px;padding:15px;margin:15px 0}
+  legend{font-weight:bold;padding:0 10px}
+  input[type="number"]{width:3em;padding:5px;border:1px solid #ccc;border-radius:4px}
+  button{padding:8px 16px;border:none;border-radius:4px;background:#3498db;color:white;cursor:pointer}
+  
+  [lang|="he"], [dir="rtl"] {
+    font-family: 'Ezra SIL SR', 'Varela Round', sans-serif !important;
+  }
+  
+  #zmanList, #zmanList * {
+    font-family: 'Ezra SIL SR', 'Varela Round', sans-serif !important;
+  }
+  
