@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>זמני וותיקין</title>
+  <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+  <link href="styles.css" rel="stylesheet">
+  <script src="https://unpkg.com/kosher-zmanim@0.9.0/dist/kosher-zmanim.min.js"></script>
+</head>
+<body>
+  <header>
+    <button id="settingsBtn" aria-label="הגדרות">⚙️</button>
+    <div id="clock">00:00:00</div>
+    <div id="hebrewDate">תאריך עברי</div>
+  </header>
+  <main>
+    <div id="currentZmanLabel">טוען...</div>
+    <div id="currentZmanTime">00:00:00</div>
+    <div id="countdown">00:00</div>
+    <div id="zmanList"></div>
+  </main>
+  <dialog id="settingsModal">
+    <div>
+      <h2>הגדרות זמני וותיקין</h2>
+      <form id="settingsForm">
+        <fieldset>
+          <legend>בחר תאריך עבור הגדרות מותאמות אישית</legend>
+          <input type="date" id="settingsDatePicker">
+          <div id="netzLabel"></div>
+          <div id="selectedDateNetz"></div>
+        </fieldset>
+        <fieldset>
+          <legend>משך בין חלקי התפילה (דקות:שניות)</legend>
+          <table>
+            <tr><th>מקטע</th><th>דקות</th><th>שניות</th></tr>
+            <tr><td dir="rtl">ברכות ⇠ ר' ישמעאל</td><td><input type="number" name="ברכות_min" min="0" max="60" value="8"></td><td><input type="number" name="ברכות_sec" min="0" max="59" value="0"></td></tr>
+            <tr><td dir="rtl">ר' ישמעאל ⇠ ישתבח</td><td><input type="number" name="רבי ישמעאל_min" min="0" max="60" value="11"></td><td><input type="number" name="רבי ישמעאל_sec" min="0" max="59" value="0"></td></tr>
+            <tr><td dir="rtl">ישתבח ⇠ שמע</td><td><input type="number" name="ישתבח_min" min="0" max="60" value="3"></td><td><input type="number" name="ישתבח_sec" min="0" max="59" value="45"></td></tr>
+            <tr><td dir="rtl">שמע ⇠ אמת</td><td><input type="number" name="קריאת שמע_min" min="0" max="60" value="2"></td><td><input type="number" name="קריאת שמע_sec" min="0" max="59" value="30"></td></tr>
+            <tr><td dir="rtl">אמת ⇠ תהילות</td><td><input type="number" name="אמת_min" min="0" max="60" value="1"></td><td><input type="number" name="אמת_sec" min="0" max="59" value="45"></td></tr>
+            <tr><td dir="rtl">תהילות ⇠ נץ</td><td><input type="number" name="תהילות_min" min="0" max="60" value="0"></td><td><input type="number" name="תהילות_sec" min="0" max="59" value="30"></td></tr>
+          </table>
+        </fieldset>
+        <div>
+          <button type="button" id="resetDefaults">איפוס לברירת מחדל</button>
+          <button type="button" id="cancelSettings">ביטול</button>
+          <button type="submit">שמור</button>
+        </div>
+      </form>
+    </div>
+  </dialog>
+  <script src="script.js"></script>
+</body>
+</html>
