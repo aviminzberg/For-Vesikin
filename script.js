@@ -45,9 +45,43 @@ async function fetchLocation(){
   })
 }
 let raw=null;
+async function updateAddressDisplay(lat, lon) {
+  try {
+    const res = await fetch(`https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${lat}&lon=${lon}`);
+    const data = await res.json();
+    const address = data.display_name || "לא נמצא כתובת";
+    let el = document.getElementById("userAddress");
+    if (!el) {
+      el = document.createElement("div");
+      el.id = "userAddress";
+      el.style.textAlign = "center";
+      el.style.margin = "10px 0 0 0";
+      el.style.fontSize = "1em";
+      el.style.color = "#888";
+      const header = document.querySelector('header');
+      header.parentNode.insertBefore(el, header.nextSibling);
+    }
+    el.textContent = address;
+  } catch {
+    // Optionally handle error
+  }
+}
+
 async function updateZmanim(date){
-  const{lat,lon}=await fetchLocation();
-  raw=KosherZmanim.getZmanimJson({date:date.toISOString().slice(0,10),timeZoneId:Intl.DateTimeFormat().resolvedOptions().timeZone,locationName:"Local",latitude:lat,longitude:lon,elevation:0,complexZmanim:true}).Zmanim;
+  const {lat,lon} = await fetchLocation();
+  const elevation = 0; // currently hardcoded, can be made dynamic
+  raw = KosherZmanim.getZmanimJson({
+    date: date.toISOString().slice(0,10),
+    timeZoneId: Intl.DateTimeFormat().resolvedOptions().timeZone,
+    locationName: "Local",
+    latitude: lat,
+    longitude: lon,
+    elevation: elevation,
+    complexZmanim: true
+  }).Zmanim;
+  console.log('Your coordinates:', {lat, lon, elevation});
+  console.log('All zmanim keys:', raw);
+  updateAddressDisplay(lat, lon);
 }
 async function updateSelectedDateNetz(date){
   const netzLabel=document.getElementById('netzLabel'),netzDiv=document.getElementById('selectedDateNetz'),d=date,dd=String(d.getDate()).padStart(2,'0'),mm=String(d.getMonth()+1).padStart(2,'0'),yyyy=d.getFullYear();
